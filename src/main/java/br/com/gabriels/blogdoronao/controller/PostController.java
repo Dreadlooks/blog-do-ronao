@@ -12,4 +12,9 @@ public class PostController {
     public String allPosts() {
         return "/post/posts";
     }
+
+    @GetMapping("/new")
+    public String newPostForm() {
+        return "/post/new-post";
+    }
 }
