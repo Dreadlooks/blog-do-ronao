@@ -15,15 +15,16 @@
             <h1 style="text-align: center; font-weight: bold; margin-top: 20px;">Posts</h1>
 
             <div class="card shadow-sm bg-white rounded" style="margin-top: 20px;">
-                <div class="card-body">
+                <div class="card-body" th:each="post : ${posts}">
                     <p class="card-subtitle mb-2 text-muted" style="font-size: 0.8rem;">
-                        Gabriel Ronei 19-03-2020
+                        <span th:text="${post.author}"></span>
+                        <span th:text="${post.formattedDate}"></span>
                     </p>
 
-                    <a><h4 class="card-title" style="font-weight: bold; color: black; padding-top: 5px">Testando post</h4>
+                    <a href="#"><h4 class="card-title" style="font-weight: bold; color: black; padding-top: 5px"><span th:text="${post.title}"></span></h4>
                     </a>
 
-                    <p class="card-text">Olá ouvintes do meu blog</p>
+                    <p class="card-text"><span th:utext="${#strings.abbreviate(post.text, 600)}"></span></p>
                 </div>
             </div>
         </div>
