@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Novo Post</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
+
+</head>
+<body>
+    <th:block th:include="./shared/header"></th:block>
+
+    <section>
+        <div class="container" style="width: 80%; padding-bottom: 30px;">
+            <h1 style="text-align: center; font-weight: bold; margin-top: 20px;">Novo Post</h1>
+
+            <form method="post">
+                <div class="form-group">
+                    <label for="title">Title: <span style="color: red">*</span></label>
+                    <input type="text" id="title" class="form-control" name="title">
+                </div>
+
+                <div class="form-group">
+                    <label for="title">Author: <span style="color: red">*</span></label>
+                    <input type="text" id="author" class="form-control" name="author">
+                </div>
+
+                <div class="form-group">
+                    <label for="summernote">Text: <span style="color: red">*</span></label>
+                    <textarea type="text" id="summernote" class="form-control" name="text"></textarea>
+                </div>
+
+                <small class="form-text text-muted">(*) Mandatory fields!</small>
+
+                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Publish</button>
+                <a href="/posts" class="btn btn-light" role="button" style="margin-top: 10px;">Cancel</a>
+            </form>
+        </div>
+    </section>
+</body>
+<script>
+    $('#summernote').summernote({
+        tabsize: 2,
+        height: 300
+    });
+</script>
+</html>
