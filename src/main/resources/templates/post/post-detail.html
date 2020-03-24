@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Post - Detail</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+</head>
+<body>
+<th:block th:include="./shared/header"></th:block>
+<main>
+    <div class="container" style="width: 60%;">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="background-color: white; padding-left: 0px;">
+                <li class="breadcrumb-item"><a href="/posts">Posts</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Post</li>
+            </ol>
+        </nav>
+        <article>
+            <h1 class="card-title" style="font-weight: bold; margin-bottom: 20px;"><span
+                    th:text="${post.title}"></span></h1>
+            <p class="card-subtitle mb-2 text-muted" style="display: flex;">
+                <i class="material-icons" style="margin-right: 10px!important;">person_outline</i>
+                <span th:text="${post.author}" style="padding-top: 2px;"></span>
+            </p>
+            <p class="card-subtitle mb-2 text-muted" style="display: flex; margin-right: 10px!important;">
+                <br>
+                <i class="material-icons" style="margin-right: 10px!important;">date_range</i>
+                <span th:text="${post.formattedDate}" style="padding-top: 3px;"></span>
+            </p>
+            <section>
+                <p class="card-text" style="margin-top: 40px;"><span th:utext="${post.text}"></span></p>
+            </section>
+        </article>
+    </div>
+</main>
+</body>
+</html>
