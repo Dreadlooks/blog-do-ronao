@@ -1,24 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt"
-      xmlns:th="http://thymeleaf.org">
+      xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title></title>
     <link th:href="@{/css/reset.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/css/blog-header.css}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="/posts">
+<!--        <div sec:authorize="isAuthenticated()">-->
+<!--            <a href="/posts/new" class="btn btn-outline-info" role="button">New Post</a>-->
+<!--        </div>-->
+
+<!--        <div sec:authorize="not isAuthenticated()">-->
+<!--            <a href="/login" class="btn btn-outline-info" role="button">Login</a>-->
+<!--        </div>-->
+
+    <nav class="navbar-flex">
+        <a class="navbar-flex navbar-brand-content" href="/posts" style="text-decoration: none">
             <img th:src="@{/images/astronaut.svg}" width="30" height="30"
                  class="d-inline-block align-top" alt="">
-            Blog do ronão
+            <span>Blog do ronão</span>
         </a>
+        <ul class="navbar-flex navbar-pages">
+            <li class=""><a href="/home" style="text-decoration: none">Home</a></li>
+            <li ><a href="/posts"  style="text-decoration: none">Posts</a></li>
+            <li><a href="/about" style="text-decoration: none">About</a></li>
+        </ul>
+        <ul class="navbar-flex navbar-login">
+            <li><a href="/signup" style="text-decoration: none"></span> Sign up</a></li>
 
-        <a href="/posts/new" class="btn btn-outline-info" role="button">New Post</a>
+            <div sec:authorize="not isAuthenticated()">
+                <li><a href="/login" style="text-decoration: none"></span> Login</a></li>
+            </div>
+
+            <div sec:authorize="isAuthenticated()">
+                <li><a href="/logout" style="text-decoration: none"></span> Logout</a></li>
+            </div>
+        </ul>
     </nav>
 </header>
 </body>

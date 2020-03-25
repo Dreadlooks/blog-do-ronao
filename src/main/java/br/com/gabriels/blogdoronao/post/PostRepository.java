@@ -1,6 +1,5 @@
-package br.com.gabriels.blogdoronao.repository;
+package br.com.gabriels.blogdoronao.post;
 
-import br.com.gabriels.blogdoronao.model.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

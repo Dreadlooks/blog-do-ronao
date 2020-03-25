@@ -1,12 +1,11 @@
-package br.com.gabriels.blogdoronao.controller;
+package br.com.gabriels.blogdoronao.post;
 
-import br.com.gabriels.blogdoronao.model.NewPostForm;
-import br.com.gabriels.blogdoronao.model.Post;
-import br.com.gabriels.blogdoronao.model.PostOutputDto;
-import br.com.gabriels.blogdoronao.repository.PostRepository;
+import br.com.gabriels.blogdoronao.post.NewPostForm;
+import br.com.gabriels.blogdoronao.post.Post;
+import br.com.gabriels.blogdoronao.post.PostOutputDto;
+import br.com.gabriels.blogdoronao.post.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

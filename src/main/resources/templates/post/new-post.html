@@ -10,7 +10,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
-
 </head>
 <body>
     <th:block th:include="./shared/header"></th:block>
@@ -32,6 +31,15 @@
                 <div class="form-group">
                     <label for="title">Author: <span style="color: red">*</span></label>
                     <input type="text" id="author" class="form-control" name="author" th:field="*{author}">
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category: <span style="color: red">*</span></label>
+                    <select id="category" class="form-control" name="category">
+                        <option th:each="category : ${T(br.com.gabriels.blogdoronao.post.Category).values()}"
+                                th:value="${category}"
+                                th:text="${category.name}"></option>
+                    </select>
                 </div>
 
                 <div class="form-group">

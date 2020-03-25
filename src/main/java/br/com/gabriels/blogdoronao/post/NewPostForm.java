@@ -1,6 +1,7 @@
-package br.com.gabriels.blogdoronao.model;
+package br.com.gabriels.blogdoronao.post;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 public class NewPostForm {
 
@@ -12,6 +13,9 @@ public class NewPostForm {
 
     @NotBlank
     private String text;
+
+    @NotNull
+    private Category category;
 
     public String getTitle() {
         return title;
@@ -37,7 +41,15 @@ public class NewPostForm {
         this.text = text;
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
     public Post toModel() {
-        return new Post(this.title, this.author, this.text);
+        return new Post(this.title, this.author, this.text, this.category);
     }
 }

@@ -1,0 +1,43 @@
+header nav {
+    background-color: #343a40;
+    padding: .6rem 1rem;
+    color: white;
+}
+
+.navbar-flex {
+    margin-bottom: 0rem !important;
+    display: flex;
+    align-items: center;
+}
+
+nav a img {
+    margin-right: 0.3rem;
+}
+
+nav li a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-brand-content {
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    color: white;
+    width: 20%;
+    text-decoration: none;
+}
+
+.navbar-pages {
+    flex-direction: row;
+    font-size: 1.1rem;
+    width: 60%;
+    justify-content: space-around;
+}
+
+.navbar-login {
+    width: 20%;
+    font-size: 1.1rem;
+    justify-content: space-around;
+}

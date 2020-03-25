@@ -1,8 +1,9 @@
-package br.com.gabriels.blogdoronao.model;
+package br.com.gabriels.blogdoronao.post;
 
 import javax.persistence.*;
 import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
@@ -22,16 +23,21 @@ public class Post {
     @Lob
     private String text;
 
+    @NotNull
+    @Enumerated(value = EnumType.STRING)
+    private Category category;
+
     @FutureOrPresent
     private LocalDate date;
 
     @Deprecated
     public Post() {}
 
-    public Post(@NotBlank String title, @NotBlank String author, @NotBlank String text) {
-        this.title = title;
+    public Post(@NotBlank String title, @NotBlank String author, @NotBlank String text, @NotNull Category category) {
+        this.title= title;
         this.author = author;
         this.text = text;
+        this.category = category;
         this.date = LocalDate.now();
     }
 
@@ -49,6 +55,10 @@ public class Post {
 
     public String getText() {
         return text;
+    }
+
+    public Category getCategory() {
+        return category;
     }
 
     public LocalDate getDate() {

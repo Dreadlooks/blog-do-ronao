@@ -1,4 +1,4 @@
-package br.com.gabriels.blogdoronao.model;
+package br.com.gabriels.blogdoronao.post;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -10,6 +10,7 @@ public class PostOutputDto {
     private String title;
     private String author;
     private String text;
+    private String category;
     private LocalDate date;
 
     public PostOutputDto(Post post) {
@@ -17,6 +18,7 @@ public class PostOutputDto {
         this.title = post.getTitle();
         this.author = post.getAuthor();
         this.text = post.getText();
+        this.category = post.getCategory().getName();
         this.date = post.getDate();
     }
 
@@ -36,9 +38,11 @@ public class PostOutputDto {
         return text;
     }
 
+    public String getCategoryName() {
+        return category;
+    }
+
     public String getFormattedDate() {
         return date.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT));
     }
-
-
 }
